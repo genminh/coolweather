@@ -1,5 +1,6 @@
 package material.com.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,6 +25,7 @@ import java.io.IOException;
 
 import material.com.coolweather.gson.Forecast;
 import material.com.coolweather.gson.Weather;
+import material.com.coolweather.service.AutoUpdateService;
 import material.com.coolweather.util.HttpUtil;
 import material.com.coolweather.util.Utility;
 import okhttp3.Call;
@@ -175,7 +177,6 @@ public class WeatherActivity extends AppCompatActivity {
                         swipeRefresh.setRefreshing(false);
                     }
                 });
-
             }
         });
     }
@@ -217,8 +218,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-        //Intent intent = new Intent(this, AutoUpdateService.class);
-        //startService(intent);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
 
     }
 
