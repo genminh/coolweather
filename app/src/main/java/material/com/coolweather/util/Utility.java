@@ -2,6 +2,8 @@ package material.com.coolweather.util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,6 +11,7 @@ import org.json.JSONObject;
 import material.com.coolweather.db.City;
 import material.com.coolweather.db.County;
 import material.com.coolweather.db.Province;
+import material.com.coolweather.gson.Weather;
 
 /**
  * Created by chang on 2017/3/25 0025.
@@ -85,7 +88,7 @@ public class Utility {
 
     /**
      * 将返回的JSON数据解析成Weather实体类
-     *//*
+     */
     public static Weather handleWeatherResponse(String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -96,6 +99,6 @@ public class Utility {
             e.printStackTrace();
         }
         return null;
-    }*/
+    }
 }
 
